@@ -1,0 +1,22 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todos</title>
+  </head>
+  <body>
+    <h1>Todos</h1>
+    <p><a href="{% url 'todos:create' %}">Create new</a></p>
+    <ul>
+      {% for t in todos %}
+        <li>
+          <a href="{% url 'todos:detail' t.pk %}">{{ t.title }}</a>
+          {% if t.completed %} (done){% endif %}
+        </li>
+      {% empty %}
+        <li>No todos yet</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

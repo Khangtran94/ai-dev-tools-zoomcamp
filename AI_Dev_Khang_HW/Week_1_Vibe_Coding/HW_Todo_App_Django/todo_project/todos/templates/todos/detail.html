@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ todo.title }}</title>
+  </head>
+  <body>
+    <h1>{{ todo.title }}</h1>
+    <p>{{ todo.description }}</p>
+    <p>Priority: {{ todo.priority }}</p>
+    <p>Completed: {{ todo.completed }}</p>
+    <p><a href="{% url 'todos:edit' todo.pk %}">Edit</a> | <a href="{% url 'todos:delete' todo.pk %}">Delete</a> | <a href="{% url 'todos:list' %}">Back</a></p>
+  </body>
+</html>
