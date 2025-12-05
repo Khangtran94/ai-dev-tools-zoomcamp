@@ -6,7 +6,7 @@
 
 In this module, we will create an end-to-end application using AI:
 
-- create frontent with Lovable and React
+- create frontend with Lovable and React
 - extract OpenAPI specs from the frontend 
 - implement backend with FastAPI based on the specs
 - add database support to the backend
@@ -294,6 +294,11 @@ gh cs stop -c <CODESPACE_NAME>
 ```
 
 Also if you deployed your application to the cloud, don't forget to delete your instances when you no longer need them.
+
+
+## Homework
+
+- [2025 Homework](../cohorts/2025/02-end-to-end/homework.md)
 
 
 ## Community notes
