@@ -1,0 +1,68 @@
+{
+  "title": "Bounded agent response",
+  "description": "A user-visible alert becomes a small evidence packet for a bounded investigation. If the agent reproduces a bug, it creates the smallest tested fix and sends it through normal CI/CD. If no safe fix is clear, it explains or escalates without changing code.",
+  "canvas": {
+    "width": 940,
+    "height": 500,
+    "background": "#ffffff"
+  },
+  "layout": {
+    "type": "manual",
+    "card_width": 220,
+    "card_height": 100,
+    "fixed_icon_axis": true
+  },
+  "nodes": [
+    {
+      "id": "alert",
+      "title": "Alert",
+      "subtitle": "User-visible failure",
+      "icon": "warning",
+      "color": "red",
+      "x": 20,
+      "y": 60
+    },
+    {
+      "id": "evidence",
+      "title": "Evidence",
+      "subtitle": "Alert, telemetry, version",
+      "icon": "document",
+      "color": "gray",
+      "x": 360,
+      "y": 60
+    },
+    {
+      "id": "investigate",
+      "title": "Investigate",
+      "subtitle": "Bounded agent session",
+      "icon": "robot",
+      "color": "purple",
+      "x": 700,
+      "y": 60
+    },
+    {
+      "id": "stop",
+      "title": "No safe fix",
+      "subtitle": "Explain or escalate",
+      "icon": "user",
+      "color": "gray",
+      "x": 360,
+      "y": 330
+    },
+    {
+      "id": "fix",
+      "title": "Tested fix",
+      "subtitle": "Small tested change via CI/CD",
+      "icon": "check",
+      "color": "green",
+      "x": 700,
+      "y": 330
+    }
+  ],
+  "edges": [
+    {"from": "alert", "to": "evidence", "color": "gray", "route": "straight"},
+    {"from": "evidence", "to": "investigate", "color": "gray", "route": "straight"},
+    {"from": "investigate", "to": "stop", "color": "gray", "route": "straight", "from_anchor": "bottom", "to_anchor": "top"},
+    {"from": "investigate", "to": "fix", "label": "Bug reproduced", "color": "green", "route": "straight", "from_anchor": "bottom", "to_anchor": "top"}
+  ]
+}

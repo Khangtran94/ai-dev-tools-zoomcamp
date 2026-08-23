@@ -1,0 +1,50 @@
+schema_version: 1
+sources:
+  - id: article-2-end-to-end
+    title: Build and Ship a Full-Stack App with AI Coding Assistants
+    type: article
+    locator: /home/alexey/git/ai-dev-tools-zoomcamp/articles/02-end-to-end.md
+    captured: 2026-08-09
+    published:
+    authority: personal
+    summary: Defines the interview-canvas running example, the author's voice, and the exact deployment promises Article 3 must fulfill.
+    page: wiki/sources/article-2-end-to-end.md
+    raw:
+    relevance: 1.00
+    status: selected
+  - id: full-stack-workshop-deployment
+    title: Build and Deploy a Full-Stack App with AI Coding Assistants — deployment chapters
+    type: workshop
+    locator: /home/alexey/git/ai-shipping-labs-workshops-raw/2026/06/2026-06-23-full-stack-vibe-coding
+    captured: 2026-08-09
+    published: 2026-06-23
+    authority: personal
+    summary: Supplies the tested sequence from containerization through Postgres, Compose, AWS, CI/CD, and cleanup.
+    page: wiki/sources/full-stack-workshop-deployment.md
+    raw:
+    relevance: 0.98
+    status: selected
+  - id: interview-canvas-repository
+    title: interview-canvas-share repository
+    type: repository
+    locator: https://github.com/alexeygrigorev/interview-canvas-share
+    captured: 2026-08-12
+    published:
+    authority: primary
+    summary: Confirms the post-workshop Docker, Postgres, Compose, test, CloudFormation, and CI/CD implementation at commit e536482.
+    page: wiki/sources/interview-canvas-repository.md
+    raw:
+    relevance: 1.00
+    status: selected
+  - id: article-3-live-workshop
+    title: Deploy a Full-Stack App with AI Coding Assistants — live workshop
+    type: video
+    locator: https://www.youtube.com/watch?v=gxt5ZDVnBMM
+    captured: 2026-08-12
+    published:
+    authority: personal
+    summary: Records the August 10 Article 3 walkthrough, including the prompts, manual checks, AWS decisions, CI/CD failure, and cleanup stack name.
+    page: wiki/sources/article-3-live-workshop.md
+    raw: /home/alexey/.cache/youtube_transcripts/gxt5ZDVnBMM.txt
+    relevance: 1.00
+    status: selected

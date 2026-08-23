@@ -1,0 +1,106 @@
+{
+  "title": "Metrics, logs, and traces",
+  "description": "An application produces three kinds of telemetry. Metrics appear as time-series measurements, logs as timestamped event records, and traces as a waterfall of spans for one request.",
+  "canvas": {
+    "width": 780,
+    "height": 620,
+    "background": "#ffffff"
+  },
+  "layout": {
+    "type": "manual",
+    "card_width": 220,
+    "card_height": 100,
+    "font_scale": 1.25,
+    "fixed_icon_axis": true
+  },
+  "nodes": [
+    {
+      "id": "application",
+      "title": "Application",
+      "icon": "api",
+      "color": "blue",
+      "x": 40,
+      "y": 260
+    },
+    {
+      "id": "metrics",
+      "title": "Metrics",
+      "variant": "specimen",
+      "color": "purple",
+      "x": 340,
+      "y": 40,
+      "width": 400,
+      "height": 150,
+      "specimen": {
+        "mode": "series",
+        "items": [
+          "42 requests/s",
+          "180 ms latency",
+          "3 errors/min"
+        ]
+      }
+    },
+    {
+      "id": "logs",
+      "title": "Logs",
+      "variant": "specimen",
+      "color": "purple",
+      "x": 340,
+      "y": 235,
+      "width": 400,
+      "height": 150,
+      "specimen": {
+        "mode": "record",
+        "items": [
+          "12:04:07 ERROR",
+          "Database query failed",
+          "room_id=184"
+        ]
+      }
+    },
+    {
+      "id": "traces",
+      "title": "Traces",
+      "variant": "specimen",
+      "color": "purple",
+      "x": 340,
+      "y": 430,
+      "width": 400,
+      "height": 150,
+      "specimen": {
+        "mode": "waterfall",
+        "items": [
+          "POST /rooms",
+          "validate input",
+          "database query"
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "application",
+      "to": "metrics",
+      "color": "purple",
+      "route": "straight",
+      "from_anchor": "right_top",
+      "to_anchor": "left"
+    },
+    {
+      "from": "application",
+      "to": "logs",
+      "color": "purple",
+      "route": "straight",
+      "from_anchor": "right",
+      "to_anchor": "left"
+    },
+    {
+      "from": "application",
+      "to": "traces",
+      "color": "purple",
+      "route": "straight",
+      "from_anchor": "right_bottom",
+      "to_anchor": "left"
+    }
+  ]
+}

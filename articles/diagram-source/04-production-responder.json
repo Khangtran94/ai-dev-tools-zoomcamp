@@ -1,0 +1,114 @@
+{
+  "title": "Run an agent only for the incident",
+  "description": "An alert enters an AWS trigger path through SNS and Lambda. Lambda starts an isolated container job for an agent with access to code, logs, and metrics. The job writes a session log, which remains after the compute terminates.",
+  "canvas": {
+    "width": 1080,
+    "height": 500,
+    "background": "#ffffff"
+  },
+  "layout": {
+    "type": "manual",
+    "card_width": 220,
+    "card_height": 100,
+    "fixed_icon_axis": true
+  },
+  "nodes": [
+    {
+      "id": "aws_boundary",
+      "title": "AWS trigger path",
+      "variant": "boundary",
+      "color": "amber",
+      "contains": ["sns", "lambda", "agent"]
+    },
+    {
+      "id": "alert",
+      "title": "Alert",
+      "variant": "icon",
+      "icon": "alert",
+      "color": "red",
+      "x": 40,
+      "y": 132
+    },
+    {
+      "id": "sns",
+      "title": "SNS topic",
+      "variant": "icon",
+      "icon": "queue",
+      "color": "amber",
+      "x": 180,
+      "y": 132
+    },
+    {
+      "id": "lambda",
+      "title": "Lambda",
+      "variant": "icon",
+      "icon": "lambda",
+      "color": "amber",
+      "x": 372,
+      "y": 132
+    },
+    {
+      "id": "agent",
+      "title": "Agent",
+      "subtitle": "Container job",
+      "icon": "robot",
+      "color": "purple",
+      "x": 530,
+      "y": 110
+    },
+    {
+      "id": "access_boundary",
+      "title": "Agent access",
+      "variant": "boundary",
+      "color": "blue",
+      "contains": ["code", "logs", "metrics"],
+      "margin": {"top": 55, "right": 20, "bottom": 20, "left": 20}
+    },
+    {
+      "id": "code",
+      "title": "Code",
+      "icon": "github",
+      "color": "blue",
+      "x": 375,
+      "y": 380,
+      "width": 150,
+      "height": 70
+    },
+    {
+      "id": "logs",
+      "title": "Logs",
+      "icon": "document",
+      "color": "blue",
+      "x": 565,
+      "y": 380,
+      "width": 150,
+      "height": 70
+    },
+    {
+      "id": "metrics",
+      "title": "Metrics",
+      "icon": "observability",
+      "color": "blue",
+      "x": 755,
+      "y": 380,
+      "width": 150,
+      "height": 70
+    },
+    {
+      "id": "session_log",
+      "title": "Session log",
+      "subtitle": "Saved after the run",
+      "icon": "document",
+      "color": "green",
+      "x": 810,
+      "y": 110
+    }
+  ],
+  "edges": [
+    {"from": "alert", "to": "sns", "color": "red", "route": "straight"},
+    {"from": "sns", "to": "lambda", "color": "amber", "route": "straight"},
+    {"from": "lambda", "to": "agent", "color": "purple", "route": "straight"},
+    {"from": "access_boundary", "to": "agent", "color": "blue", "route": "straight", "from_anchor": "top", "to_anchor": "bottom", "dashed": true},
+    {"from": "agent", "to": "session_log", "color": "green", "route": "straight"}
+  ]
+}

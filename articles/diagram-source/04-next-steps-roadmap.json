@@ -1,0 +1,69 @@
+{
+  "title": "Operational foundations for agent authority",
+  "description": "The current baseline supports three operational foundations: reliability, safer delivery, and security evidence. Agent governance sits above them because wider authority should come only after those independent controls exist.",
+  "canvas": {
+    "width": 940,
+    "height": 520,
+    "background": "#ffffff"
+  },
+  "layout": {
+    "type": "manual",
+    "card_width": 240,
+    "card_height": 150,
+    "fixed_icon_axis": true
+  },
+  "nodes": [
+    {
+      "id": "governance",
+      "title": "Agent governance",
+      "subtitle": "Expand authority last",
+      "eyebrow": "LAST",
+      "icon": "settings",
+      "color": "purple",
+      "x": 220,
+      "y": 40,
+      "width": 500,
+      "height": 110
+    },
+    {
+      "id": "reliability",
+      "title": "Reliability",
+      "subtitle": "SLIs, SLOs, burn-rate alerts",
+      "eyebrow": "START HERE",
+      "icon": "search",
+      "color": "green",
+      "x": 40,
+      "y": 180
+    },
+    {
+      "id": "delivery",
+      "title": "Safer delivery",
+      "subtitle": "Canaries, flags, restore drills",
+      "icon": "pull-request",
+      "color": "gray",
+      "x": 350,
+      "y": 180
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "subtitle": "Scans, SBOM, provenance",
+      "icon": "shield",
+      "color": "gray",
+      "x": 660,
+      "y": 180
+    },
+    {
+      "id": "baseline",
+      "title": "Current baseline",
+      "subtitle": "Manual promotion • observable journey • bounded response",
+      "icon": "check",
+      "color": "blue",
+      "x": 40,
+      "y": 370,
+      "width": 860,
+      "height": 110
+    }
+  ],
+  "edges": []
+}
