@@ -36,29 +36,12 @@
 | Register | [Sign up for the free 2026 cohort](https://courses.datatalks.club/register/ai-dev-tools/) |
 | Start date | August 31, 2026 |
 | Learn | [Course platform](https://courses.datatalks.club/ai-dev-tools-2026/) &middot; [Materials](https://github.com/DataTalksClub/ai-dev-tools-zoomcamp) &middot; [Videos](https://www.youtube.com/playlist?list=PL3MmuxUbc_hLuyafXPyhTdbF4s_uNhc43) |
-| Before the course | [Pre-course live events](#pre-course-live-events) |
+| Course launch | [Read the launch article](https://aishippingblog.com/p/ai-dev-tools-zoomcamp-2026-starts) |
 | Community | [Slack](https://datatalks.club/slack.html) &middot; [Course channel](https://app.slack.com/client/T01ATQK62F8/C09HWT76L95) &middot; [Telegram](https://t.me/aidevtoolszoomcamp) |
 | Help | [Docs](https://datatalks.club/docs/courses/ai-dev-tools-zoomcamp/) &middot; [Logistics](https://datatalks.club/docs/courses/zoomcamp-logistics/) &middot; [FAQ](https://datatalks.club/faq/ai-dev-tools-zoomcamp.html) |
 
 > [!NOTE]
 > The 2026 materials are currently being finalized. The repository shows the direction for the next cohort, but some videos, homework, deadlines, project requirements, and module details may change before the cohort starts on August 31, 2026.
-
-## Pre-Course Live Events
-
-Before the 2026 cohort starts, we are running a free live event series to help you understand the updated course content and prepare for the first week.
-
-The sessions are optional, but useful if you want to see the workflows in action before starting the course.
-
-| Event | Date | What it covers | Link | Article |
-| --- | --- | --- | --- | --- |
-| Workshop 1: AI-Native Developer Workflow | Wed, July 22, 09:00 CEST | How to use AI coding tools for planning, implementation, review, testing, and debugging without losing control of the code. | [Recording](https://www.youtube.com/watch?v=VUJxJGpaDEs) | [Article](https://aishippingblog.com/p/ai-native-development-specifications) |
-| Workshop 2: Build and Ship an AI-Assisted Full-Stack App | Mon, August 3, 15:00 CEST | How to move from product spec to frontend, backend, OpenAPI contract, tests, Docker, deployment, and CI/CD. | [Recording](https://www.youtube.com/watch?v=x9dq5nBpDg8) | [Article](https://aishippingblog.com/p/build-and-ship-a-full-stack-app-with) |
-| Workshop 3: Test, Containerize, and Deploy an AI-Assisted App | Mon, August 10, 14:00 CEST | How to add integration tests, move from SQLite to Postgres in containers, set up CI, deploy the app, and ship every merge automatically. | [Recording](https://www.youtube.com/watch?v=gxt5ZDVnBMM) | [Article](https://aishippingblog.com/p/deploy-a-full-stack-app-with-ai-coding) |
-| Workshop 4: DevOps and Observability for AI-Built Apps | Tue, August 18, 14:00 CEST | How to observe a deployed app, alert on user impact, put an agent in the incident loop, and run recurring security audits. | [Recording](https://www.youtube.com/watch?v=YkxLo_FRoQw) | [Article](https://aishippingblog.com/p/devops-and-observability-for-an-ai) |
-| Workshop 5: Coding Agent Capabilities | Mon, August 24, 14:00 CEST | How MCP, skills, plugins, hooks, subagents, and custom agents fit into practical coding-agent workflows. | [RSVP](https://luma.com/ap4l3qlj) | |
-| Pre-Course Live Q&A | Mon, August 24, 17:00 CEST | Bring questions about prerequisites, tools, homework, deadlines, projects, peer review, and certificates. | [RSVP](https://luma.com/a8qa5s2s) | |
-| Course Launch | Mon, August 31, 17:00 CEST | Start the cohort with the course overview, first-week workflow, community links, and live questions. | [RSVP](https://luma.com/tsiusx8s) | |
-
 
 ## About the Course
 
@@ -96,18 +79,15 @@ You should have:
 - Basic programming ability in Python, JavaScript, TypeScript, or a similar language.
 - Comfort using the command line.
 - Git and GitHub basics.
-- Willingness to read, review, debug, and maintain AI-generated code.
 
 Helpful, but not required:
 
-- Experience with a code editor such as VS Code, Cursor, or a similar IDE.
 - Basic web development familiarity.
 - Basic Docker familiarity.
 
 Not required:
 
 - Prior coding assistant or coding agent experience.
-- Django experience.
 - A powerful machine or GPU.
 
 ## How to Take the Course
@@ -137,81 +117,68 @@ Self-paced steps:
 
 ## Syllabus
 
-### [Module 1: AI-Native Developer Workflow](01-ai-native-workflow/)
+### [Module 1: AI-Native Developer Workflow](cohorts/2026/01-ai-native-workflow/lesson.md)
 
-Learn how to take a software idea from a written specification to verified code. You make the decisions and review the result.
+Learn how to turn a vague product idea into specified, implemented, and independently verified software with coding agents.
 
 In this module, you'll:
 
-- Compare chat assistants, coding agents, agentic IDEs, cloud agents, and project bootstrappers, then choose a tool for the course.
-- Turn an idea into a project specification and a backlog of small tasks with goals, acceptance criteria, constraints, and clear boundaries.
-- Give coding agents durable context with `AGENTS.md`, project documents, and an explicit way of working.
-- Separate task grooming, implementation, and verification across focused sessions with product manager, software engineer, and QA roles.
-- Use agent loops and multi-agent orchestration to work through a backlog while retaining responsibility for review.
+- Turn a vague idea into a spec and a backlog of focused tasks.
+- Give coding agents durable context through `AGENTS.md`.
+- Use PM/engineer/QA roles with loop and graph engineering to implement and verify the backlog.
 
-After this module, you can specify, delegate, and independently verify AI-assisted development work.
+Outcome: design and run an AI-native development workflow that takes a product from idea to implementation and independent QA.
 
-### [Module 2: Build and Ship an AI-Assisted Full-Stack App](02-end-to-end/)
+### [Module 2: Build and Ship an AI-Assisted Full-Stack App](cohorts/2026/02-development/lesson.md)
 
-Use AI tools to build an end-to-end application while keeping the engineering workflow explicit.
+Build a full-stack application with AI coding assistants, replacing mocked components one at a time.
 
 You will:
 
-- Write a product spec and acceptance criteria.
-- Build a frontend prototype with AI assistance.
-- Define the API contract with OpenAPI.
-- Implement a FastAPI or Django backend.
-- Add database support with SQLite, without locking the code to it.
-- Add unit tests for the behavior the spec describes.
+- Turn an idea into a spec, then build a frontend prototype and an OpenAPI contract.
+- Implement a FastAPI backend from the contract, then connect it to the frontend with auth and real-time collaboration.
+- Replace temporary storage with SQLite and add tests.
 
-Outcome: a working full-stack application with an OpenAPI contract, tests, and reproducible development instructions.
+Outcome: a working full-stack app with real-time updates, persistent data, tests, and a clear API contract.
 
-### [Module 3: Test, Containerize, and Deploy an AI-Assisted App](03-deployment/)
+### [Module 3: Test, Containerize, and Deploy an AI-Assisted App](cohorts/2026/03-deployment/lesson.md)
 
-Take the app from your machine to a public URL, with the checks that make shipping safe.
+Take the application from your machine to a public deployment, with tests and delivery checks that verify the whole system.
 
 You will:
 
-- Write integration tests that exercise the API, the database, and the frontend together.
-- Containerize the app and move from SQLite to Postgres.
-- Set up CI so every pull request is linted, tested, and built.
-- Deploy the app to a platform such as Render, Fly.io, Railway, or Cloud Run.
-- Wire up CI/CD so merging to the main branch ships the change.
+- Containerize the app and move from SQLite to Postgres with Docker Compose.
+- Add integration and end-to-end tests, including Playwright for the collaborative workflow.
+- Deploy to AWS and wire up a GitHub Actions CI/CD pipeline.
 
-Outcome: a deployed, containerized application that redeploys automatically when tests pass.
+Outcome: a public, containerized app backed by Postgres, with automated tests and CI/CD that deploys only after tests pass.
 
-### [Module 4: DevOps and Observability for AI-Built Apps](04-devops/)
+### [Module 4: DevOps and Observability for AI-Built Apps](cohorts/2026/04-devops/lesson.md)
 
-A deployed app is not an operable one. Build the loop that tells you when it breaks, responds to the failure, and audits both the code and the responder.
+A deployed app can still fail silently. Add release controls and observability so you can detect, investigate, and respond to problems.
 
 You will:
 
-- Instrument one important request with OpenTelemetry and follow it through a metric, a trace, a log, and a deployment version.
-- Send telemetry through a collector into Prometheus, Loki, Tempo, and Grafana.
-- Write one alert that represents sustained user impact and carries enough context to act on.
-- Collect a bounded evidence packet and run a coding agent as a read-only first responder.
-- Enforce outside the model whether a known rollback may run or a human must take over.
-- Run a recurring security audit that combines a deterministic scanner, model reasoning, and human validation.
-- Inventory what your responder can read, write, reach, and spend.
+- Separate development and production environments with a promoted, versioned release pipeline.
+- Instrument the app with OpenTelemetry into Prometheus, Loki, Tempo, and Grafana, and set up an actionable alert.
+- Give a coding agent a bounded, read-only responder role to investigate incidents.
 
-Example tools include OpenTelemetry, Grafana, Prometheus, Semgrep, PR-Agent, Snyk Agent Scan, K8sGPT, HolmesGPT, LiteLLM, and Ollama.
+Outcome: separate dev/prod workflows, an observability stack, actionable alerts, and a proof-of-concept AI on-call responder.
 
-Outcome: an operations and security package that lets you reconstruct any incident from alert to recovery.
+### [Module 5: Coding Agent Building Blocks: Reusable Skills and Specialized Subagents](05-agent-capabilities/)
 
-### [Module 5: Coding Agent Capabilities: MCP, Skills, Plugins, and Custom Agents](05-agent-capabilities/)
-
-Learn how modern coding agents are extended, customized, and connected to external tools.
+Turn repeated workflows and project roles into reusable capabilities that coding agents can discover and apply.
 
 You will:
 
-- Understand MCP clients, servers, tools, resources, prompts, and communication modes.
-- Configure MCP-enabled workflows in coding tools.
-- Use reusable instructions, workflows, commands, skills, hooks, and specialized subagents.
-- Explore plugin and extension patterns.
-- Build a small agent extension pack around your app.
-- Discuss local vs. remote tools, permissions, and security risks.
+- Create discoverable skills with `SKILL.md` and decide whether they should be global or project-specific.
+- Define focused subagents, including PM/engineer/QA roles, to separate implementation from independent review.
+- Orchestrate tasks in parallel using isolated Git worktrees.
 
-Outcome: project-specific agent capabilities that make AI tools more useful and safer inside your development workflow.
+Outcome: reusable skills, subagent definitions, and an orchestration pattern for sequential or parallel project work.
+
+> [!NOTE]
+> Module 5 has no graded homework. It is assessed through the [module deliverable](05-agent-capabilities/#module-deliverable-agent-extension-pack) instead.
 
 ## Final Project
 
@@ -219,15 +186,15 @@ The [final project](project/) applies the course workflow to an end-to-end appli
 
 You will:
 
-- Choose a problem and describe the expected system behavior.
-- Build a frontend.
-- Build a backend.
-- Define frontend/backend communication with an OpenAPI contract.
-- Add database or persistent storage.
-- Test the application.
-- Containerize the application.
-- Deploy it so others can try it.
-- Document how AI tools, prompts, workflows, agent instructions, MCP, or automation were used.
+- Choose a problem and describe the expected system behavior
+- Build a frontend
+- Build a backend
+- Define frontend/backend communication with an OpenAPI contract
+- Add database or persistent storage
+- Test the application
+- Containerize the application
+- Deploy it so others can try it
+- Document how AI tools, prompts, workflows, agent instructions, MCP, or automation were used
 
 For the live cohort certificate path, projects are evaluated through peer review. Learners must pass the final project and complete the required peer reviews.
 

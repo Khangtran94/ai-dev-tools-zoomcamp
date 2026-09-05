@@ -1,0 +1,192 @@
+{
+  "title": "Study Relay, end to end",
+  "description": "Hosts and students use the deployed app, which is backed by a database inside Production. A developer pushes a change through CI/CD, which deploys it to Development; a release owner manually promotes the tested release into Production. Telemetry flows from Production through observability to alerting, and an AI agent investigates and can prepare a fix.",
+  "canvas": {
+    "width": 1400,
+    "height": 920,
+    "background": "#ffffff"
+  },
+  "layout": {
+    "type": "manual",
+    "card_width": 220,
+    "card_height": 100,
+    "fixed_icon_axis": true
+  },
+  "nodes": [
+    {
+      "id": "cicd_boundary",
+      "title": "CI/CD",
+      "variant": "boundary",
+      "color": "purple",
+      "x": 340,
+      "y": 30,
+      "width": 300,
+      "height": 330
+    },
+    {
+      "id": "production_boundary",
+      "title": "Production",
+      "variant": "boundary",
+      "color": "green",
+      "x": 750,
+      "y": 330,
+      "width": 520,
+      "height": 280
+    },
+    {
+      "id": "respond_boundary",
+      "title": "Respond",
+      "variant": "boundary",
+      "color": "green",
+      "x": 20,
+      "y": 680,
+      "width": 300,
+      "height": 200
+    },
+    {
+      "id": "observe_boundary",
+      "title": "Observe",
+      "variant": "boundary",
+      "color": "purple",
+      "x": 750,
+      "y": 680,
+      "width": 580,
+      "height": 200
+    },
+    {
+      "id": "developer",
+      "title": "You",
+      "variant": "icon",
+      "icon": "user",
+      "color": "blue",
+      "x": 60,
+      "y": 90
+    },
+    {
+      "id": "deploy",
+      "title": "Deploy",
+      "subtitle": "Ship the change",
+      "icon": "workflow",
+      "color": "purple",
+      "x": 380,
+      "y": 70
+    },
+    {
+      "id": "development",
+      "title": "Development",
+      "subtitle": "Validate the release",
+      "icon": "environment",
+      "color": "blue",
+      "x": 750,
+      "y": 70
+    },
+    {
+      "id": "release_owner",
+      "title": "Release owner",
+      "variant": "icon",
+      "icon": "user",
+      "color": "blue",
+      "x": 60,
+      "y": 230
+    },
+    {
+      "id": "promotion",
+      "title": "Prod release",
+      "subtitle": "Promote tested release",
+      "icon": "workflow",
+      "color": "purple",
+      "x": 380,
+      "y": 250
+    },
+    {
+      "id": "host_browser",
+      "title": "Host browser",
+      "variant": "icon",
+      "icon": "browser",
+      "color": "blue",
+      "x": 20,
+      "y": 370
+    },
+    {
+      "id": "student_browser",
+      "title": "Student browser",
+      "variant": "icon",
+      "icon": "browser",
+      "color": "blue",
+      "x": 20,
+      "y": 520
+    },
+    {
+      "id": "app",
+      "title": "Study Relay app",
+      "subtitle": "Frontend + backend",
+      "eyebrow": "CONTAINER",
+      "icon": "api",
+      "color": "amber",
+      "x": 790,
+      "y": 400,
+      "width": 210
+    },
+    {
+      "id": "postgres",
+      "title": "Postgres",
+      "subtitle": "Groups, requests, relay links",
+      "eyebrow": "CONTAINER",
+      "icon": "container",
+      "color": "green",
+      "x": 1030,
+      "y": 400,
+      "width": 210
+    },
+    {
+      "id": "pgdata",
+      "title": "pgdata",
+      "variant": "attached",
+      "attach_to": "postgres",
+      "attach_side": "bottom",
+      "attach_align": "end",
+      "icon": "database",
+      "color": "green"
+    },
+    {
+      "id": "agent",
+      "title": "AI agent",
+      "subtitle": "Investigate + patch",
+      "icon": "robot",
+      "color": "green",
+      "x": 60,
+      "y": 740
+    },
+    {
+      "id": "alerting",
+      "title": "Alerting",
+      "subtitle": "Failed joins or kickoffs",
+      "icon": "warning",
+      "color": "red",
+      "x": 790,
+      "y": 740
+    },
+    {
+      "id": "observability",
+      "title": "Observability",
+      "subtitle": "Collect telemetry",
+      "icon": "observability",
+      "color": "purple",
+      "x": 1090,
+      "y": 740
+    }
+  ],
+  "edges": [
+    {"from": "developer", "to": "deploy", "label": "Push", "color": "blue", "route": "straight"},
+    {"from": "deploy", "to": "development", "color": "purple", "route": "straight"},
+    {"from": "development", "to": "promotion", "color": "blue", "route": "orthogonal", "from_anchor": "bottom", "to_anchor": "top", "dashed": true},
+    {"from": "release_owner", "to": "promotion", "label": "Manual", "color": "green", "route": "straight", "dashed": true},
+    {"from": "promotion", "to": "app", "color": "green", "route": "orthogonal", "from_anchor": "right", "to_anchor": "top"},
+    {"from": "host_browser", "to": "app", "color": "purple", "route": "orthogonal", "from_anchor": "right", "to_anchor": "left_top"},
+    {"from": "student_browser", "to": "app", "color": "purple", "route": "orthogonal", "from_anchor": "right", "to_anchor": "left_bottom"},
+    {"from": "app", "to": "postgres", "color": "green", "route": "straight"},
+    {"from": "app", "to": "observability", "color": "blue", "route": "orthogonal", "from_anchor": "bottom", "to_anchor": "top"},
+    {"from": "observability", "to": "alerting", "color": "red", "route": "straight", "from_anchor": "left", "to_anchor": "right"},
+    {"from": "alerting", "to": "agent", "color": "green", "route": "straight", "from_anchor": "left", "to_anchor": "right"}
+  ]
+}
